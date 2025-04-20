@@ -265,7 +265,7 @@ const MapSection = () => {
             >
               <article className="scene-text">
                 <h2 className="scene-header">
-                  FARS 2024: U.S. Pedestrian Crash Data Clustered by Contextual
+                  FARS 2023: U.S. Pedestrian Crash Data Clustered by Contextual
                   Patterns
                 </h2>
                 <p>
