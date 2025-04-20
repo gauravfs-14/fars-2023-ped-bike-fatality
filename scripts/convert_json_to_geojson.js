@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Read and parse rawData.json
-const rawPath = path.join(__dirname, "../src/data/data.json");
+const rawPath = path.join(__dirname, "../public/data/data.json");
 const rawData = JSON.parse(fs.readFileSync(rawPath, "utf-8"));
 
 function convertToGeoJSON(data) {
@@ -39,7 +39,7 @@ function convertToGeoJSON(data) {
 const geoJsonData = convertToGeoJSON(rawData);
 
 // Save to geoData.json
-const outPath = path.join(__dirname, "../src/data/geoData.json");
+const outPath = path.join(__dirname, "../public/data/geoData.json");
 fs.writeFileSync(outPath, JSON.stringify(geoJsonData, null, 2), "utf-8");
 
 console.log("✅ GeoJSON file saved as geoData.json");

@@ -1,13 +1,24 @@
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Scrollama, Step } from "react-scrollama";
-import geoJsonData from "../data/geoData.json";
 
 const MapSection = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const geoJsonLayerRef = useRef(null);
+
+  const [geoJsonData, setGeoJsonData] = useState(null);
+
+  useEffect(() => {
+    fetch("/data/geoData.json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("GeoJSON data loaded");
+        setGeoJsonData(data);
+      })
+      .catch((error) => console.error("Error loading GeoJSON:", error));
+  }, []);
 
   useEffect(() => {
     if (map.current || !geoJsonData) return; // initialize map only once and when geoJsonData is ready
@@ -151,6 +162,8 @@ const MapSection = () => {
   }, [geoJsonData]);
 
   const filteredFeaturesByCluster = useMemo(() => {
+    if (!geoJsonData || !geoJsonData.features) return {}; // Add null check
+
     const clusters = {};
     for (let i = 0; i <= 5; i++) {
       clusters[i] = geoJsonData.features.filter(
@@ -158,7 +171,7 @@ const MapSection = () => {
       );
     }
     return clusters;
-  }, []);
+  }, [geoJsonData]);
 
   const onStepEnter = ({ data }) => {
     // Handle map updates based on scroll position
