@@ -11,7 +11,9 @@ const MapSection = () => {
   const [geoJsonData, setGeoJsonData] = useState(null);
 
   useEffect(() => {
-    fetch("/data/geoData.json")
+    fetch(
+      "https://zlyp6b2wyu34rqw4.public.blob.vercel-storage.com/geoData-xrAxBoCKwlqQ2qcThRClJjEUgC5LR3.json"
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
