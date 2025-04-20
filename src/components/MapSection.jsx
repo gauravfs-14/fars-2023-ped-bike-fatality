@@ -12,7 +12,16 @@ const MapSection = () => {
 
   useEffect(() => {
     fetch("/data/geoData.json")
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new Error("Invalid content type. Expected JSON.");
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log("GeoJSON data loaded");
         setGeoJsonData(data);
