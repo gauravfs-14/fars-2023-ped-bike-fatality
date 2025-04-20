@@ -1,0 +1,105 @@
+@media (max-width: 1300px) {
+  /* General */
+  body {
+    font-size: 12px;
+  }
+  /* END General */
+
+  /* Intro */
+  #story-intro:before {
+    clip-path: polygon(-25px 0, 100% 0, 100% 100%, 50% 100%);
+  }
+  #story-intro {
+    min-height: 120vh;
+  }
+  #story-intro-text {
+    padding: var(--wrapper-padding);
+  }
+  .header-logo {
+    max-width: 20em;
+  }
+  .story-intro-text-wrapper {
+    width: 30em;
+  }
+  .header {
+    font-size: 2rem;
+  }
+  .story-intro-p {
+    font-size: 1.5rem;
+  }
+  .story-intro-btns-wrapper {
+    width: 35%;
+  }
+  .story-intro-btns-wrapper {
+    padding-left: 0;
+    bottom: 13.5rem;
+  }
+  .story-intro-icon-btns-link {
+    width: 20ch;
+  }
+  .story-intro-icon-figure {
+    font-size: 1rem;
+  }
+  .story-intro-figcaption {
+    left: var(--wrapper-padding-half);
+  }
+  /* END Intro */
+
+  /* Scenes General */
+  .scene-text {
+    width: 40ch;
+    margin-right: var(--wrapper-padding-half);
+  }
+  /* END Scenes General */
+
+  /* Individual Scenes */
+  .what-is-lts-content-wrapper {
+    flex-direction: column;
+    width: 75%;
+  }
+  #regional-lts-table {
+    margin: 0 auto;
+    margin-top: var(--wrapper-padding-double);
+    width: 95%;
+  }
+  .what-is-lts-text {
+    width: 95%;
+  }
+  /* END Individual Scenes */
+
+  .footer-content {
+    padding: var(--wrapper-padding-double) var(--wrapper-padding-half);
+  }
+  .footer-main-text {
+    flex-direction: column;
+  }
+  .footer-lts-logo {
+    width: 45%;
+    margin-bottom: var(--wrapper-padding-half);
+  }
+  .footer-list-main,
+  .footer-main-text,
+  .footer-hr {
+    width: 90%;
+    font-size: 1rem;
+  }
+  .footer-p {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .footer-list-h2,
+  .footer-p {
+    font-size: 1rem;
+  }
+  .footer-hr {
+    margin: var(--wrapper-padding) auto;
+  }
+  .footer-logo-dvrpc {
+    width: 125px;
+  }
+  .footer-connect-us {
+    font-size: 1.2em;
+  }
+
+  /* END Footer */
+}
